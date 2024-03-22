@@ -1,10 +1,9 @@
-<div align="center">
+# asdf-firtool
 
-# asdf-firtool [![Build](https://github.com/lordspacehog/asdf-firtool/actions/workflows/build.yml/badge.svg)](https://github.com/lordspacehog/asdf-firtool/actions/workflows/build.yml) [![Lint](https://github.com/lordspacehog/asdf-firtool/actions/workflows/lint.yml/badge.svg)](https://github.com/lordspacehog/asdf-firtool/actions/workflows/lint.yml)
+
+[![Build](https://github.com/lordspacehog/asdf-firtool/actions/workflows/build.yml/badge.svg)](https://github.com/lordspacehog/asdf-firtool/actions/workflows/build.yml) [![Lint](https://github.com/lordspacehog/asdf-firtool/actions/workflows/lint.yml/badge.svg)](https://github.com/lordspacehog/asdf-firtool/actions/workflows/lint.yml)
 
 [firtool](https://circt.llvm.org/docs/) plugin for the [asdf version manager](https://asdf-vm.com).
-
-</div>
 
 # Contents
 
@@ -15,10 +14,7 @@
 
 # Dependencies
 
-**TODO: adapt this section**
-
 - `bash`, `curl`, `tar`, and [POSIX utilities](https://pubs.opengroup.org/onlinepubs/9699919799/idx/utilities.html).
-- `SOME_ENV_VAR`: set this environment variable in your shell config to load the correct version of tool x.
 
 # Install
 

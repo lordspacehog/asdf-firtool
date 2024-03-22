@@ -10,14 +10,24 @@ source "${plugin_dir}/lib/utils.bash"
 
 mkdir -p "$ASDF_DOWNLOAD_PATH"
 
-# TODO: Adapt this to proper extension and adapt extracting strategy.
 release_file="$ASDF_DOWNLOAD_PATH/$TOOL_NAME-$ASDF_INSTALL_VERSION.tar.gz"
 
 # Download tar.gz file to the download directory
 download_release "$ASDF_INSTALL_VERSION" "$release_file"
 
 #  Extract contents of tar.gz file into the download directory
-tar -xzf "$release_file" -C "$ASDF_DOWNLOAD_PATH" --strip-components=1 || fail "Could not extract $release_file"
+case "$ASDF_INSTALL_VERSION" in
+1.4* | 1.5* | 1.37.[12])
+	firtool_archive_filename="firtool-${ASDF_INSTALL_VERSION}/bin/firtool"
+	strip_depth=2
+	;;
+*)
+	firtool_archive_filename="bin/firtool"
+	strip_depth=1
+	;;
+esac
+
+tar -xzf "$release_file" -C "$ASDF_DOWNLOAD_PATH" --strip-components=${strip_depth} "${firtool_archive_filename}" || fail "Could not extract $release_file"
 
 # Remove the tar.gz file since we don't need to keep it
 rm "$release_file"
